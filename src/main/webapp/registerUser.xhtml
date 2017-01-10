@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p = "http://primefaces.org/ui">
+    <h:head>
+        <title>Tutela Digital</title>
+       
+    </h:head>
+    <body>
+        <h:form id="form">
+            <h2>Datos de Registro</h2>
+            <h:panelGrid cellspacing="5" columns="2"  style="align-content:  center;">
+        <h:outputText value="Nombre de Usuario" />
+        <p:inputText id="nomuser" value="#{registerUSer.user}"/>
+        <h:outputText value="Numero de documento" />
+        <p:inputText  id="id" value="#{registerUSer.document}"/>
+        <h:outputText value="E-Mail" />
+        <p:inputText  id="email" value="#{registerUSer.email}"/>
+         <h:outputText value="repite el E-Mail" />
+         <p:inputText  id="emailconfirm" value="#{registerUSer.confirmEmail}"/>
+        <h:outputText value="contraseña " />
+        <p:password id="password" value="#{registerUSer.password}" />
+        <h:outputText value="Repetir contraseña " />
+        <p:password id="passwordconfirm" value="#{registerUSer.confirmPassword}" />
+        <h:outputText value="Acepta Terminos y condiciones " />
+        <p:selectBooleanCheckbox value="#{registerUSer.term}" />
+        </h:panelGrid> 
+            <p:commandButton value="registrar" actionListener="#{registerUSer.registerUSer()}" icon="ui-icon-check" process="@form"/>
+        </h:form>
+    </body>
+</html>
